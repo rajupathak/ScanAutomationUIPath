@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1140,6389.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1100,6504.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -143,10 +143,9 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1110.4,6324.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1110.4,6440" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="uimprojectpath" />
-      <Variable x:TypeArguments="x:String" Name="scriptPath" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -164,6 +163,7 @@
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokePowerShell.PowerShellVariables>
     </ui:InvokePowerShell>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="1048,75.2" sap2010:WorkflowViewState.IdRef="Comment_8" Text="// This script is used to refrresh the folder where component.xml path saved" />
     <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim folderPath As String = &quot;D:\UIPathRObot\UIMComponentScan&quot;&#xD;&#xA;&#xD;&#xA;' Refresh folder using System.IO&#xD;&#xA;System.IO.Directory.GetFiles(folderPath)&#xD;&#xA;&#xD;&#xA;' Alternatively, you can use a delay to wait for the refresh to complete&#xD;&#xA;System.Threading.Thread.Sleep(2000)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" DisplayName="Run Shell Script to get path" sap:VirtualizedContainerService.HintSize="1048,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
       <ui:InvokeCode.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -180,8 +180,6 @@
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="filePath" />
               <Variable x:TypeArguments="x:String" Default="uime4-rtc-development" Name="scannerObjectName" />
-              <Variable x:TypeArguments="x:String" Name="Choice" />
-              <Variable x:TypeArguments="x:String" Name="expandableText" />
               <Variable x:TypeArguments="x:Boolean" Name="result" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
