@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1100,5791.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1140,6389.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -143,7 +143,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1110.4,5726.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1110.4,6324.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="uimprojectpath" />
       <Variable x:TypeArguments="x:String" Name="scriptPath" />
@@ -159,46 +159,85 @@
       </ui:InputDialog.Result>
     </ui:InputDialog>
     <ui:Comment sap:VirtualizedContainerService.HintSize="1048,75.2" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// This Proccess is used to get the file path and then store into one csv file" />
-    <ui:InvokePowerShell x:TypeArguments="sma:PSObject" ContinueOnError="{x:Null}" CommandText="[&quot;cd &quot;&quot;D:\UIMScanAutomation&quot;&quot; ; .\getPath.sh&quot;]" DisplayName="Get Path for all the component.xml file under repo" sap:VirtualizedContainerService.HintSize="1048,80" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_1" IsScript="True">
+    <ui:InvokePowerShell x:TypeArguments="sma:PSObject" ContinueOnError="{x:Null}" CommandText="[&quot;cd &quot;&quot;D:\UIPathRObot\UIMComponentScan&quot;&quot; ; .\getPath.sh&quot;]" DisplayName="Get Path for all the component.xml file under repo" sap:VirtualizedContainerService.HintSize="1048,80" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_1" IsScript="True">
       <ui:InvokePowerShell.PowerShellVariables>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokePowerShell.PowerShellVariables>
     </ui:InvokePowerShell>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim folderPath As String = &quot;D:\UIMScanAutomation\uime4-rtc-development&quot;&#xD;&#xA;&#xD;&#xA;' Refresh folder using System.IO&#xD;&#xA;System.IO.Directory.GetFiles(folderPath)&#xD;&#xA;&#xD;&#xA;' Alternatively, you can use a delay to wait for the refresh to complete&#xD;&#xA;System.Threading.Thread.Sleep(1000)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" DisplayName="Run Shell Script to get path" sap:VirtualizedContainerService.HintSize="1048,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim folderPath As String = &quot;D:\UIPathRObot\UIMComponentScan&quot;&#xD;&#xA;&#xD;&#xA;' Refresh folder using System.IO&#xD;&#xA;System.IO.Directory.GetFiles(folderPath)&#xD;&#xA;&#xD;&#xA;' Alternatively, you can use a delay to wait for the refresh to complete&#xD;&#xA;System.Threading.Thread.Sleep(2000)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" DisplayName="Run Shell Script to get path" sap:VirtualizedContainerService.HintSize="1048,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
       <ui:InvokeCode.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
     <ui:Comment sap:VirtualizedContainerService.HintSize="1048,56" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Open App Scan Source and run scan " />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Launch: AppScan Source for Analysis" sap:VirtualizedContainerService.HintSize="1048,4796.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="2246b07f-43db-4858-96a6-c141c21b9075" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Launch: AppScan Source for Analysis" sap:VirtualizedContainerService.HintSize="1048,5395.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="2246b07f-43db-4858-96a6-c141c21b9075" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1014.4,4505.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1014.4,5104" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="filePath" />
               <Variable x:TypeArguments="x:String" Default="uime4-rtc-development" Name="scannerObjectName" />
               <Variable x:TypeArguments="x:String" Name="Choice" />
+              <Variable x:TypeArguments="x:String" Name="expandableText" />
+              <Variable x:TypeArguments="x:Boolean" Name="result" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ReadCsvFile DataTable="[filePath]" Delimitator="Comma" DisplayName="Read CSV to get stored file path" FilePath="D:\UIMScanAutomation\output.csv" sap:VirtualizedContainerService.HintSize="952,155.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+            <ui:ReadCsvFile DataTable="[filePath]" Delimitator="Comma" DisplayName="Read CSV to get stored file path" FilePath="output.csv" sap:VirtualizedContainerService.HintSize="952,155.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
             <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="952,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Total Number of component.xml files count is [&quot;+filePath.RowCount.ToString+&quot;]  if this is correct please press Ok to continue&quot;]" />
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ': Quick Start'" sap:VirtualizedContainerService.HintSize="952,157.6" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2246b07f-43db-4858-96a6-c141c21b9075" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="17, 127, 11, 11" DesignTimeScaleFactor="1.25" FriendlyName="': Quick Start'" FullSelectorArgument="&lt;wnd aaname='Explorer' cls='SWT_Window0' /&gt;&lt;wnd aaname='Expandable' cls='SWT_Window0' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer' cls='SWT_Window0' /&gt;&lt;wnd aaname='Expandable' cls='SWT_Window0' check:text=': Quick Start' /&gt;" Guid="d4844717-a9b3-4233-b345-915f33c7961a" InformativeScreenshot="815723207b130e47f882444c28cefc77.png" ScopeSelectorArgument="&lt;wnd app='appscansrc.exe' cls='SWT_Window0' title='AppScan Source for Analysis' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Discover application…'" sap:VirtualizedContainerService.HintSize="952,157.6" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2246b07f-43db-4858-96a6-c141c21b9075" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable CvTextArea="21, 151, 151, 15" CvTextArgument="Discover applications..." CvType="Text" DesignTimeRectangle="22, 149, 151, 20" DesignTimeScaleFactor="1.25" FriendlyName="'&lt;A&gt;Discover application…'" FullSelectorArgument="&lt;wnd aaname='Explorer' cls='SWT_Window0' /&gt;&lt;wnd cls='SysLink' title='&amp;lt;A&amp;gt;Discover applications...&amp;lt;/A&amp;gt;' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer' cls='SWT_Window0' /&gt;&lt;wnd cls='SysLink' title='&amp;lt;A&amp;gt;Discover applications...&amp;lt;/A&amp;gt;' check:text='&amp;lt;A&amp;gt;Discover applications...&amp;lt;/A&amp;gt;' /&gt;" Guid="a8a6397e-075d-42f2-81d6-7727f2ddea98" InformativeScreenshot="b9dd7561eab0113cd929042d53abc327.png" ScopeSelectorArgument="&lt;wnd app='appscansrc.exe' cls='SWT_Window0' title='AppScan Source for Analysis' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
+            <ui:Comment sap:VirtualizedContainerService.HintSize="952,94.4" sap2010:WorkflowViewState.IdRef="Comment_7" Text="// Here We are checking if quick Start menu is already expanded or not based on that value we are proceeding further" />
+            <uix:NCheckState DisplayName="Check Quick Start Menu is expanded or not" Exists="[result]" sap:VirtualizedContainerService.HintSize="952,819.2" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="2246b07f-43db-4858-96a6-c141c21b9075" Timeout="2" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="If Menu is expanded click on Discover applications" sap:VirtualizedContainerService.HintSize="449.6,403.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Target is displayed  &quot; +result.ToString]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&lt;A&gt;Discover application…'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2246b07f-43db-4858-96a6-c141c21b9075" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CvTextArea="21, 151, 151, 15" CvTextArgument="Discover applications..." CvType="Text" DesignTimeRectangle="22, 149, 151, 20" DesignTimeScaleFactor="1.25" FriendlyName="'&lt;A&gt;Discover application…'" FullSelectorArgument="&lt;wnd aaname='Explorer' cls='SWT_Window0' /&gt;&lt;wnd cls='SysLink' title='&amp;lt;A&amp;gt;Discover applications...&amp;lt;/A&amp;gt;' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer' cls='SWT_Window0' /&gt;&lt;wnd cls='SysLink' title='&amp;lt;A&amp;gt;Discover applications...&amp;lt;/A&amp;gt;' check:text='&amp;lt;A&amp;gt;Discover applications...&amp;lt;/A&amp;gt;' /&gt;" Guid="cd5ff829-1c00-44e4-a0e5-5c4b4ef3659f" InformativeScreenshot="cae05f008530ced5020b77bb0410ac56.png" ScopeSelectorArgument="&lt;wnd app='appscansrc.exe' cls='SWT_Window0' title='AppScan Source for Analysis' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="If quick Start Menu is not expanded first expand it then click " sap:VirtualizedContainerService.HintSize="449.6,600.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Target is displayed  &quot; +result.ToString]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Quick Start'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_23" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2246b07f-43db-4858-96a6-c141c21b9075" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CvElementArea="14, 123, 16, 17" CvType="ArrowButton" DesignTimeRectangle="17, 127, 11, 11" DesignTimeScaleFactor="1.25" FriendlyName="': Quick Start'" FullSelectorArgument="&lt;wnd aaname='Explorer' cls='SWT_Window0' /&gt;&lt;wnd aaname='Expandable' cls='SWT_Window0' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer' cls='SWT_Window0' /&gt;&lt;wnd aaname='Expandable' cls='SWT_Window0' check:text=': Quick Start' /&gt;" Guid="113788db-8398-4dbd-b0e0-ca4561b2a58d" InformativeScreenshot="99fd4be3979dee50d6c7aa8effd331c9.png" ScopeSelectorArgument="&lt;wnd app='appscansrc.exe' cls='SWT_Window0' title='AppScan Source for Analysis' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CvTextArea="30, 122, 78, 16" CvTextArgument="Quick Start" CvType="Text" DesignTimeRectangle="32, 121, 77, 20" ElementType="Text" FriendlyName="'Quick Start'" FullSelectorArgument="&lt;wnd aaname='Explorer' cls='SWT_Window0' /&gt;&lt;wnd cls='Static' title='Quick Start' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer' cls='SWT_Window0' /&gt;&lt;wnd cls='Static' title='Quick Start' check:text='Quick Start' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&lt;A&gt;Discover application…'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_24" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2246b07f-43db-4858-96a6-c141c21b9075" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CvTextArea="21, 151, 151, 15" CvTextArgument="Discover applications..." CvType="Text" DesignTimeRectangle="22, 149, 151, 20" DesignTimeScaleFactor="1.25" FriendlyName="'&lt;A&gt;Discover application…'" FullSelectorArgument="&lt;wnd aaname='Explorer' cls='SWT_Window0' /&gt;&lt;wnd cls='SysLink' title='&amp;lt;A&amp;gt;Discover applications...&amp;lt;/A&amp;gt;' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer' cls='SWT_Window0' /&gt;&lt;wnd cls='SysLink' title='&amp;lt;A&amp;gt;Discover applications...&amp;lt;/A&amp;gt;' check:text='&amp;lt;A&amp;gt;Discover applications...&amp;lt;/A&amp;gt;' /&gt;" Guid="74879b30-2bad-4df7-b21c-369107d70664" InformativeScreenshot="cae05f008530ced5020b77bb0410ac56.png" ScopeSelectorArgument="&lt;wnd app='appscansrc.exe' cls='SWT_Window0' title='AppScan Source for Analysis' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable CvTextArea="21, 151, 151, 15" CvTextArgument="Discover applications..." CvType="Text" DesignTimeRectangle="21, 151, 151, 15" DesignTimeScaleFactor="1.25" FriendlyName="'&lt;A&gt;Discover application…'" FullSelectorArgument="&lt;wnd aaname='Explorer' cls='SWT_Window0' /&gt;&lt;wnd cls='SysLink' title='Discover' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer' cls='SWT_Window0' /&gt;&lt;wnd cls='SysLink' title='&amp;lt;A&amp;gt;Discover applications...&amp;lt;/A&amp;gt;' check:text='&amp;lt;A&amp;gt;Discover applications...&amp;lt;/A&amp;gt;' /&gt;" Guid="863a696c-087b-496a-8531-099e94c2a693" ImageBase64="" InformativeScreenshot="d05474ee127a8ba31971df9636c3ab87.png" ScopeSelectorArgument="&lt;wnd app='appscansrc.exe' cls='SWT_Window0' title='AppScan Source for Analysis' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Provide Folder Path here" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="952,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_10" InteractionMode="WindowMessages" ScopeIdentifier="2246b07f-43db-4858-96a6-c141c21b9075" Text="[uimprojectpath]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable CvElementArea="38, 225, 630, 29" CvType="InputBox" DesignTimeRectangle="39, 227, 628, 26" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd cls='Edit' /&gt;" FuzzySelectorArgument="&lt;wnd cls='Edit' /&gt;" Guid="2effa26c-977f-4ddd-8992-0d233bab10f8" InformativeScreenshot="d7954de702aa8ccfba19c8317eedf19d.png" ScopeSelectorArgument="&lt;wnd app='appscansrc.exe' cls='#32770' title='Application Discovery Assistant' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
@@ -235,7 +274,7 @@
                         <uix:TargetAnchorable CvElementArea="641, 205, 140, 31" CvTextArea="694, 212, 31, 15" CvTextArgument="Add" CvType="Button" DesignTimeRectangle="642, 206, 139, 30" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Add'" FullSelectorArgument="&lt;wnd cls='Button' title='Add' /&gt;" FuzzySelectorArgument="&lt;wnd cls='Button' title='Add' check:text='Add' /&gt;" Guid="cd79cb03-a8d6-4f8e-b234-007600278647" InformativeScreenshot="c57e79cdc4421ec7616cd5d7da2418a2.png" ScopeSelectorArgument="&lt;wnd app='appscansrc.exe' cls='#32770' title='Application Discovery Assistant' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Folder'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="WindowMessages" ScopeIdentifier="2246b07f-43db-4858-96a6-c141c21b9075" Text="[CurrentRow(&quot;folderPath&quot;).ToString]" Version="V3">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Folder'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="334.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="WindowMessages" ScopeIdentifier="2246b07f-43db-4858-96a6-c141c21b9075" Text="[CurrentRow(&quot;folderPath&quot;).ToString]" Version="V3">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable CvElementArea="205, 503, 726, 33" CvType="InputBox" DesignTimeRectangle="208, 506, 723, 30" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd ctrlid='1152' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1152' /&gt;" Guid="1f780033-5979-4811-bb54-1ab777a64d30" InformativeScreenshot="d3f6172c3f665ac5838bc122b9ff32dd.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='appscansrc.exe' cls='#32770' title='Select Folder' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>

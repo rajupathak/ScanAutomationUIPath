@@ -1,9 +1,9 @@
-filePath
-D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/prereqs.rtc/msn/component.xml
-D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/prereqs.rtc/sametime.toolkit/component.xml
-D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/prereqs.rtc/smack/component.xml
-D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/rtcapi/com.ibm.collaboration.realtime.rtc.aol/component.xml
-D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/rtcapi/com.ibm.collaboration.realtime.rtc.api/component.xml
-D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/rtcapi/com.ibm.collaboration.realtime.rtc.msn/component.xml
-D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/rtcapi/com.ibm.collaboration.realtime.rtc.vp/component.xml
-D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/rtcapi/com.ibm.collaboration.realtime.rtc.xmpp/component.xml
+folderPath
+D:\UIMScanAutomation\uime4-rtc-development\uim-rtc\lwp\prereqs.rtc\msn
+D:\UIMScanAutomation\uime4-rtc-development\uim-rtc\lwp\prereqs.rtc\sametime.toolkit
+D:\UIMScanAutomation\uime4-rtc-development\uim-rtc\lwp\prereqs.rtc\smack
+D:\UIMScanAutomation\uime4-rtc-development\uim-rtc\lwp\rtcapi\com.ibm.collaboration.realtime.rtc.aol
+D:\UIMScanAutomation\uime4-rtc-development\uim-rtc\lwp\rtcapi\com.ibm.collaboration.realtime.rtc.api
+D:\UIMScanAutomation\uime4-rtc-development\uim-rtc\lwp\rtcapi\com.ibm.collaboration.realtime.rtc.msn
+D:\UIMScanAutomation\uime4-rtc-development\uim-rtc\lwp\rtcapi\com.ibm.collaboration.realtime.rtc.vp
+D:\UIMScanAutomation\uime4-rtc-development\uim-rtc\lwp\rtcapi\com.ibm.collaboration.realtime.rtc.xmpp
