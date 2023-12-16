@@ -1,0 +1,8 @@
+D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/prereqs.rtc/msn/component.xml
+D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/prereqs.rtc/sametime.toolkit/component.xml
+D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/prereqs.rtc/smack/component.xml
+D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/rtcapi/com.ibm.collaboration.realtime.rtc.aol/component.xml
+D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/rtcapi/com.ibm.collaboration.realtime.rtc.api/component.xml
+D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/rtcapi/com.ibm.collaboration.realtime.rtc.msn/component.xml
+D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/rtcapi/com.ibm.collaboration.realtime.rtc.vp/component.xml
+D:/UIM Client Automation/uime4-rtc-development/uim-rtc/lwp/rtcapi/com.ibm.collaboration.realtime.rtc.xmpp/component.xml

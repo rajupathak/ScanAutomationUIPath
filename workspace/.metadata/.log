@@ -1,0 +1,48 @@
+!SESSION 2023-12-15 15:55:35.996 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=11.0.12+7
+JRE 11 Windows 10 amd64-64-Bit Compressed References 20210730_175 (JIT enabled, AOT enabled)
+OpenJ9   - 1851b0074
+OMR      - 9db1c870d
+JCL      - 21849e2ca0 based on jdk-11.0.12+7
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 4 0 2023-12-15 15:56:14.562
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.omg.CORBA.BAD_PARAM
+	at org.jacorb.orb.ORB.string_to_object(ORB.java:1905)
+	at com.ouncelabs.presentation.datalayer.ServerManagerConnection.connect(ServerManagerConnection.java:80)
+	at com.ouncelabs.presentation.datalayer.ServerManagerConnection.innerFactory(ServerManagerConnection.java:133)
+	at com.ouncelabs.presentation.datalayer.Factory.acquireLicense(Factory.java:694)
+	at com.ouncelabs.osa.ui.base.OunceBaseUiPlugin.checkLicense(OunceBaseUiPlugin.java:463)
+	at com.ouncelabs.osa.ui.base.OunceBaseUiPlugin.checkLicense(OunceBaseUiPlugin.java:444)
+	at com.ouncelabs.osa.ui.base.OunceBaseUiPlugin.checkLicense(OunceBaseUiPlugin.java:440)
+	at com.ouncelabs.osa.rcp.application.AppSecWorkbenchAdvisor.preStartup(AppSecWorkbenchAdvisor.java:271)
+	at org.eclipse.ui.internal.Workbench$20.runWithException(Workbench.java:1648)
+	at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupThreading.java:36)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:183)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4792)
+	at org.eclipse.ui.internal.StartupThreading.runWithoutExceptions(StartupThreading.java:94)
+	at org.eclipse.ui.internal.Workbench.init(Workbench.java:1644)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2748)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:636)
+	at org.eclipse.ui.internal.Workbench$$Lambda$162/0x0000000000000000.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at com.ouncelabs.osa.rcp.application.AppSecApplication.start(AppSecApplication.java:65)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
